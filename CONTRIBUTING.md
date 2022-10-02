@@ -114,5 +114,5 @@ Here are a couple of friendly tutorials to get you started: http://makeapullrequ
 
 # Code review process
 
-> The core team (me and some of my fellow coders) looks at Pull Requests on a regular basis
+> The core team (me and some of my fellow coders) looks at Pull Requests on a regular basis.
 > After feedback has been given we expect responses within four weeks. After four weeks we may close the pull request if it isn't showing any activity.
