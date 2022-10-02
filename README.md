@@ -35,13 +35,13 @@ Just go over this [VirtualENV](https://www.geeksforgeeks.org/creating-python-vir
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/parthahere001/Learner/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
 * **Partha Banerjee** - *Initial work* - [Parthahere001](https://github.com/parthahere001)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/parthahere001/Learner/contributors) who participated in this project.
 
 ## License
 
