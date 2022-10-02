@@ -1,0 +1,1 @@
+web: gunicorn plms.wsgi --log-file -

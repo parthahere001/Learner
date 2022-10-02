@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+      
+      
+
+
+
+    }
+
+    .button {
+      text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1ed66b;
+  border: none;
+  color: #213dd8;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.button span {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  text-decoration: none;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  text-decoration: none;
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  text-decoration: none;
+  opacity: 1;
+  right: 0;
+    }
+    .card:hover{
+      text-decoration: none;
+  
+  
+  border: 2px solid black;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2)  0 4px 20px 0 rgba(0,0,0,0.19);
+
+  background-color: #09b3f7;
+  box-shadow: 0px 15px 20px black;
+  
+  transform: translateY(-7px);
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <p style=" text-decoration: underline; font-size: 40px; font-weight: bold; color: aliceblue; text-align: center;">
+    Available Courses</p>
+
+
+  <br><br>
+
+  {% for x in course %}
+  {% cycle '#f083fc' '#689bed' 'yellow' 'coral' 'grey' as bgcolor silent %}
+
+  <div class="card"
+    style=" box-shadow: black;margin-left: 30px; max-width: 27%; margin: 10%; background-color: {{ bgcolor }}; display: inline-block; width: 30%; padding: 1em; margin: 3px; border: 2px solid black; border-radius: 7px; margin: left 30px;">
+    <div class="card-body">
+      <h3 class="card-title" style="text-decoration: underline;">{{ x.title }}</h3>
+      <h5 class="card-subtitle mb-2 text-muted">Taught By : {{ x.teacher.name }}</h5>
+      <p style="font-size: 20px;" class="card-text">{{ x.description }}</p>
+
+      <div style="padding-left: 25%;">
+        <button class="button" style="vertical-align:middle; color: black; text-decoration: none;"><span><a style="text-decoration: none; font-weight: bold; color: black;" href="enroll/{{ x.id }}">Enroll</a></span></button>
+      </div>
+
+    </div>
+  </div>
+
+  {% endfor %}
+
+
+</body>

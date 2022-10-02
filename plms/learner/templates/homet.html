@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-image: url('https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/03/24185535/Online-Learning-800x500.jpg');
+      
+      
+
+
+
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@700&display=swap');
+
+
+    
+  .w3-green,.w3-hover-green:hover{color:#fff!important;background-color:#09b3f7!important}
+
+.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+
+.w3-padding-64{padding-top:10px!important;padding-bottom:10px!important}
+a {
+  display: inline-block;
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  padding-top: 3%;
+  color: black;
+  margin: 15px;
+  margin-left: 11%;
+  margin-top: 9%;
+  align-items: stretch;
+
+  justify-content: center;
+
+  
+    text-decoration: none;
+    display:inline-block;
+    width:30%;
+    height:70px;
+    background-color:#0874da;
+    border:1px solid black;
+    border-radius: 10px;
+}
+
+a:hover
+{ text-decoration: none;
+  
+  
+  border: 2px solid black;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2)  0 4px 20px 0 rgba(0,0,0,0.19);
+
+  background-color: #0874da;
+  box-shadow: 0px 15px 20px #09b3f7;
+  color: #fff;
+  transform: translateY(-7px);
+
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+    <p style="  text-decoration: underline; text-align: center; font-family: 'Edu QLD Beginner'; font-size: 40px; align-content: center; align-items: center; font-weight: bold; ">Learning Management System</p>
+
+    {% if user.is_authenticated %}
+    <div style="  text-align: right;  font-size: 50; font-family:  'Edu QLD Beginner', cursive; font-weight: bold;">
+        <p style="position: fixed; top: 0px; right: 0px;"> Hi {{ user.username }}! <br> <br><a style="width: 60px; height: 30px; padding: 0px; padding-top: 3px;  background-color: gray; " href="{% url 'userlogout' %}">Logout</a></p>
+         </div>
+         <br><br><a href="{% url 'add' %}">Add Courses</a> <a  href="{% url 'indext' %}">Edit Courses</a> 
+
+    {% else %}
+         <marquee style="font-weight: bold;">Please Login Or Register To Continue</marquee>
+         <p style="font-weight: bold; position: fixed; top: 8px; left:  0px;">You are not logged in</p>
+         
+         <a  style=" font-size: 27px; margin-left: 34%; text-align: center; padding-bottom: 4%; width: 160px; height: 20px;  background-color: gray; " href="{% url 'userlogin' %}">Log In</a>
+         
+         <a  style=" font-size: 27px;  text-align: center; padding-bottom: 4%; width: 160px; height: 20px;  background-color: gray; " href="{% url 'register' %}">Register</a>
+             {% endif %}
+         
