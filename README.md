@@ -1,6 +1,6 @@
 # Learner
 
-An Open-Source Learning Management System buit especially for schools
+An Open-Source Learning Management System built especially for schools
 
 ## Getting Started
 
