@@ -1,11 +1,5 @@
 from django.urls import path
 from learner import views
-
-
-
-
-
-
 urlpatterns = [
     path('homes', views.homes, name='homes'),
     path('homet', views.homet, name='homet'),

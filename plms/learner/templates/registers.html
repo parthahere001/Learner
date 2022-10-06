@@ -4,7 +4,39 @@
 {# Load CSS and JavaScript #}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+<style>
+  /* The alert message box */
+  .alert {
+    position: absolute;
+    top: 100px;
+    padding: 10px 10px 0px 10px;
+    background-color: #dddddd; /* Red */
+    color: rgb(0, 0, 0);
+    margin: -39px 90vh;
+    width: max-content;
+    height: 6%;
+    align-items: center;
+    justify-content: center;
+    }
 
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+</style>
+{%for msg in messages%}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  {{msg}}
+</div>
+{%endfor%}
 
 
 
