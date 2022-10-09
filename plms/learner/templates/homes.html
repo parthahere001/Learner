@@ -24,7 +24,7 @@
 
 
 .w3-padding-64{padding-top:10px!important;padding-bottom:10px!important}
-a {
+.item {
   display: inline-block;
   text-align: center;
   font-size: large;
@@ -48,7 +48,7 @@ a {
     border-radius: 10px;
 }
 
-a:hover
+.item:hover
 { text-decoration: none;
   
   
@@ -60,6 +60,40 @@ a:hover
   color: #fff;
   transform: translateY(-7px);
 
+}
+
+.item a{
+   text-decoration: none;
+   font-size:x-large;
+}
+
+.active {
+  background-color: #e90000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }
 
 /* The alert message box */
@@ -89,7 +123,6 @@ transition: 0.3s;
 }
 
 
-
   </style>
 </head>
 
@@ -103,20 +136,27 @@ transition: 0.3s;
     {{msg}}
   </div>
   {%endfor%}
+  
+<nav>
+  <ul>
+    <li><a href="{% url 'homes' %}">Hi  {{ user.username }}!</a></li>
+    <li><a href="{% url 'index' %}">Courses</a></li>
+    <li><a href="{% url 'eindex' %}">Enrolled courses</a></li>
+    <li style="float:right"><a class="active" href="{% url 'userlogout' %}"">Logout</a></li>
+  </ul>
+</nav>
 
 
 
-
-<p style="  text-decoration: underline; text-align: center; font-family: 'Edu QLD Beginner'; font-size: 40px; align-content: center; align-items: center; font-weight: bold; ">Learning Management System</p>
+<p style="text-align: center; color:#e90000; 'Edu QLD Beginner'; font-size: 40px; align-content: center; align-items: center; font-weight: bold; ">Learning Management System</p>
 
 {% if user.is_authenticated %}
-   
-
-          
-          <div style="  text-align: right;  font-size: 50; font-family:  'Edu QLD Beginner', cursive; font-weight: bold;">
-            <p style="position: fixed; top: 0px; right: 0px;"> Hi {{ user.username }}! <br> <br><a style="width: 60px; height: 30px; padding: 0px; padding-top: 3px;  background-color: gray; " href="{% url 'userlogout' %}">Logout</a></p>
+             <div class="item">
+               <a href="{% url 'index' %}">Available Courses</a>
              </div>
-             <br><br><a href="{% url 'index' %}">Available Courses</a> <a  href="{% url 'eindex' %}">Your Courses</a>
+             <div class="item">
+                <a  href="{% url 'eindex' %}">Your Courses</a>
+             </div>
         
 {% else %}
 <marquee style="font-weight: bold;">Please Login Or Register To Continue</marquee>
