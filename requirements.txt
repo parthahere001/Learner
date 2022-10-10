@@ -1,0 +1,9 @@
+asgiref==3.5.2
+beautifulsoup4==4.11.1
+Django==4.0.6
+django-bootstrap5==21.3
+gunicorn==20.1.0
+psycopg2-binary==2.9.3
+soupsieve==2.3.2.post1
+sqlparse==0.4.2
+whitenoise==6.2.0

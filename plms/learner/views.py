@@ -191,7 +191,9 @@ def registers(request):
       member = Student(sid=new_user)
       member.save()
       return render(request, 'homes.html')
-     
+    else:
+        messages.success(request,"password didn't match!")
+        return render(request,'registers.html',{'form':form}) 
   context = {'form':form}
   
   return render(request, 'registers.html',context)
@@ -218,7 +220,9 @@ def registert(request):
       member = Teacher(tid=new_user,name=new_user.username)
       member.save()
       return render(request, 'homet.html')
-     
+    else:
+        messages.success(request,"password didn't match!")
+        return render(request,'registert.html',{'form':form})  
   context = {'form':form}
   
   return render(request, 'registert.html',context)

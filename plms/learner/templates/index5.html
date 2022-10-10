@@ -203,11 +203,49 @@
   color: white;
   z-index: 0;
 }
+
+.active {
+  background-color: #e90000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+
   </style>
 </head>
 
 <body>
-
+  <nav>
+    <ul>
+      <li><a href="{% url 'homes' %}">Hi  {{ user.username }}!</a></li>
+      <li><a href="{% url 'index' %}">Courses</a></li>
+      <li><a href="{% url 'eindex' %}">Enrolled courses</a></li>
+      <li style="float:right"><a class="active" href="{% url 'userlogout' %}">Logout</a></li>
+    </ul>
+  </nav>
 
   <p style=" text-decoration: underline; font-size: 40px; font-weight: bold; color: aliceblue; text-align: center;">
     Available Courses</p>
